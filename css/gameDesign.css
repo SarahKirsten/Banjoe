@@ -1,0 +1,47 @@
+.topnav{
+    z-index:99;
+}
+#grass{
+    position: absolute;
+    z-index:97;
+    animation: grass 10s linear infinite;
+}
+@keyframes grass{
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-100%,0);}
+}
+#moon{
+    position:absolute;
+    z-index:95;
+    left: 1500px;
+    animation: moon 700s linear infinite;
+}
+@keyframes moon{
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-100%,0);}
+}
+#mountain{
+    position:absolute;
+    z-index:96;
+    animation: mountain 200s linear;
+}
+@keyframes mountain{
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-100%,0);}
+}
+#sky{
+    position:absolute;
+    z-index:94;
+    animation: sky 500s linear;
+}
+@keyframes sky{
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-100%,0);}
+}
+
+/*    animation: back 60s linear infinite normal;
+}
+@keyframes back{
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-100%,0);}
+}*/
