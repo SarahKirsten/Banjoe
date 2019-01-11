@@ -6,7 +6,10 @@ var Banjoe = {
     x_position : 0,
     y_position : 0,
     y_velocity : 20,
+    y_max : 60,
+    y_min : 0,
     speed : -10,
+    y_fall : -1,
     gifs : ["images/BanjoGuyRunning.gif", "images/BanjoGuyRunningLeft.gif", "images/BanjoGuyJump.gif", "images/BanjoGuyJumpLeft.gif"],
     $images : null,
  
@@ -23,6 +26,7 @@ var Banjoe = {
         }
         $("div#Banjoe").empty().append(this.$images[0]);
         this.direction = true;
+        this.speed = -10;
     },
     goLeft : function(){
         if(this.direction === false){
@@ -30,43 +34,49 @@ var Banjoe = {
         }
         $("div#Banjoe").empty().append(this.$images[1]);
         this.direction = false;
+        this.speed = 10;
     },
 
     //Handles character jumps
+    jumpRight : function(){
+        $("div#Banjoe").empty().append(this.$images[2]);
+    },
+
+    jumpLeft : function(){
+        $("div#Banjoe").empty().append(this.$images[3]);
+    },
+
     jump : function(){
+        if(this.y_position < this.y_max){
+            this.y_position += this.y_velocity;      
+        }
         if(this.direction === true){
-            $("div#Banjoe").empty().append(this.$images[2]);
-            while(this.y_position <= this.y_velocity){
-                
+            this.jumpRight();
+        }
+        else if(this.direction === false){
+            this.jumpLeft();
+        }
+    },
+
+    run : function(){
+        if(this.y_position > this.y_min){
+            this.y_position += this.y_fall;
+        }
+        else if(this.y_position === 1){
+            if(this.direction === true){
+                this.goRight();
+            }
+            else{
+                this.goLeft();
             }
         }
-        if(this.direction === false){
-            $("div#Banjoe").empty().append(this.$images[3]);
-        }
     }
-
 }
-
-$(document).ready(function () {
-    Banjoe.init();
-});
-
 
 //This controls user input
 // WASD control
 //https://www.w3schools.com/jsref/event_key_keycode.asp
 //https://keycode.info/
-window.addEventListener("keypress", function(){
-    if(event.key === "a"){
-        Banjoe.goLeft();
-    }
-    else if(event.key === "d"){
-        Banjoe.goRight();
-    }
-    else if(event.key === "w"){
-        Banjoe.jump();
-    }
-});
 
 //Preloads an array of images into a jQuery object
 //from Kent Jones' Coyote example
