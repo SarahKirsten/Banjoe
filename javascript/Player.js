@@ -21,17 +21,11 @@ var Banjoe = {
 
     //These methods will control the direction of our character
     goRight : function(){
-        if(this.direction === true){
-            return;
-        }
         $("div#Banjoe").empty().append(this.$images[0]);
         this.direction = true;
         this.speed = -10;
     },
     goLeft : function(){
-        if(this.direction === false){
-            return;
-        }
         $("div#Banjoe").empty().append(this.$images[1]);
         this.direction = false;
         this.speed = 10;
@@ -59,10 +53,11 @@ var Banjoe = {
     },
 
     run : function(){
-        if(this.y_position > this.y_min){
+        if(this.y_position > 1){
             this.y_position += this.y_fall;
         }
         else if(this.y_position === 1){
+            this.y_position = 0;
             if(this.direction === true){
                 this.goRight();
             }
