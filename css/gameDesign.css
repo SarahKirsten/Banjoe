@@ -3,13 +3,10 @@
 }
 .containerGame{
     overflow:hidden;
-    border: 1px solid #16940F;
-    width:1000px;
     position:relative;
-    left: 500px;
-    top: 100px;
+    top: 200px;
 }
-.ground{
+#ground{
     background: url("../images/Ground.png") repeat-x;
     height:550px;
     width:9000px;
@@ -17,11 +14,11 @@
     position:absolute;
     z-index:98;
 }
-@keyframes slide{
+/*@keyframes slide{
     0% {transform: translate3d(0,0,0);}
     100% {transform:translate3d(-3000px, 0,0);}
-}
-.mountains{
+}*/
+#mountains{
     background: url("../images/Mountains.png") repeat-x;
     height:550px;
     width:9000px;
@@ -29,11 +26,11 @@
     position:absolute;
     z-index:97;
 }
-@keyframes slide2{
+/*@keyframes slide2{
     0% {transform: translate3d(0,0,0);}
     100% {transform: translate3d(-3000px,0,0);}
-}
-.sky{
+}*/
+#sky{
     background: url("../images/Sky.png") repeat-x;
     height:550px;
     width:9000px;
@@ -41,11 +38,11 @@
     position:absolute;
     z-index:96;
 }
-@keyframes slide3{
+/*@keyframes slide3{
     0% {transform: translate3d(0,0,0);}
     100% {transform: translate3d(-3000px,0,0);}
-}
-.moon{
+}*/
+#moon{
     background: url("../images/Moon.png") repeat-x;
     height:550px;
     width:9000px;
@@ -54,7 +51,7 @@
     left:500px;
     z-index:96;
 }
-@keyframes slide4{
+/*@keyframes slide4{
     0% {transform: translate3d(0,0,0);}
     100% {transform: translate3d(-3000px,0,0);}
-}
+}*/ 

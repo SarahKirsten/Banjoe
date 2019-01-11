@@ -145,7 +145,6 @@ body
     top: 1%;
     left: 1%;
     height: 1400;
-    z-index:99;
 }
 
 .line
@@ -307,4 +306,10 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+  }
+
+
+  /* Code for the display of the character sprite */
+  #Banjoe img{
+      z-index : 100;
   }
