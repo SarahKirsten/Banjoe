@@ -10,48 +10,43 @@
     background: url("../images/Ground.png") repeat-x;
     height:550px;
     width:9000px;
-    animation: slide 10s linear infinite;
-    position:absolute;
-    z-index:98;
+    position:relative;
+    z-index:4;
 }
-/*@keyframes slide{
-    0% {transform: translate3d(0,0,0);}
-    100% {transform:translate3d(-3000px, 0,0);}
-}*/
 #mountains{
     background: url("../images/Mountains.png") repeat-x;
     height:550px;
     width:9000px;
-    animation: slide2 200s linear infinite;
-    position:absolute;
-    z-index:97;
+    position:relative;
+    top:-550px;
+    z-index:3;
 }
-/*@keyframes slide2{
-    0% {transform: translate3d(0,0,0);}
-    100% {transform: translate3d(-3000px,0,0);}
-}*/
 #sky{
     background: url("../images/Sky.png") repeat-x;
     height:550px;
     width:9000px;
-    animation: slide3 500s linear infinite;
-    position:absolute;
-    z-index:96;
+    position:relative;
+    z-index:1;
+    top:-1100px;
 }
-/*@keyframes slide3{
-    0% {transform: translate3d(0,0,0);}
-    100% {transform: translate3d(-3000px,0,0);}
-}*/
 #moon{
     background: url("../images/Moon.png") repeat-x;
     height:550px;
     width:9000px;
-    animation: slide4 700s linear infinite;
+    position:relative;
+    z-index:2;
+    top:-1650px;
+}
+/*#Banjoe{
+    background: url("../images/BanjoGuy.gif") repeat-x;
     position:relative;
     left:500px;
-    z-index:96;
+    z-index:97;
+}*/
+#Banjoe{
+    background: url("../images/BanjoeGuy.gif") repeat-x;
+    position:relative;
+    z-index:5;
+    top:-1825px;
+    left:400px;
 }
-/*@keyframes slide4{
-    0% {transform: translate3d(0,0,0);}
-    100% {transform: translate3d(-3000px,0,0);}
-}*/ 
