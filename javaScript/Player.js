@@ -75,10 +75,10 @@ var Banjoe = {
 
 //Preloads an array of images into a jQuery object
 //from Kent Jones' Coyote example
-$.preload = function( arr ) {
-    return $.map(arr, function( val ){
-        var $img = $('<img/>');
-        $img[0].src = val;
-        return $img[0];
-    });
-}
+// $.preload = function( arr ) {
+//     return $.map(arr, function( val ){
+//         var $img = $('<img/>');
+//         $img[0].src = val;
+//         return $img[0];
+//     });
+// }
