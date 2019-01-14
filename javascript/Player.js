@@ -56,7 +56,7 @@ var Banjoe = {
         if(this.y_position > 1){
             this.y_position += this.y_fall;
         }
-        else if(this.y_position === 1){
+        else if (this.y_position === 1) {
             this.y_position = 0;
             if(this.direction === true){
                 this.goRight();
