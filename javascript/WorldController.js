@@ -8,6 +8,17 @@ var BanjoeController = {
     init : function(){
         this.$Banjoe = Object.create(Banjoe);
         this.$Banjoe.init();
+        window.addEventListener("keypress", function(){
+            if(event.key === "a"){
+                BanjoeController.$Banjoe.goLeft();
+            }
+            else if(event.key === "d"){
+                BanjoeController.$Banjoe.goRight();
+            }
+            else if(event.key === "w"){
+                BanjoeController.$Banjoe.jump();
+            }
+        });
     },
 
     draw : function(){
@@ -15,10 +26,15 @@ var BanjoeController = {
         this.$Banjoe.run();
         var xpos = this.$Banjoe.x_position;
         var ypos = this.$Banjoe.y_position;
+        $('#moon').css('background-position', (xpos * (1.0 / 12.0)));
+		$('#sky').css('background-position', (xpos * (1.0 / 6.0)));
+		$('#mountains').css('background-position', (xpos * (1.0 / 3.0)));
+        $('#ground').css('background-position', xpos);
+        $('#Banjoe').css('top', (this.$Banjoe.y_position));
     }
 }
 
-//Blatantly stolen from Kent Jones' Coyote example
+//wlatantly stolen from Kent Jones' Coyote example
 requestAnimFrame = (function(){
     if (window.requestAnimationFrame) return window.requestAnimationFrame;
     if (window.webkitRequestAnimationFrame) return window.webkitRequestAnimationFrame;
@@ -29,18 +45,6 @@ requestAnimFrame = (function(){
         window.setTimeout(callback, element);
     };
 })();
-
-window.addEventListener("keypress", function(){
-    if(event.key === "a"){
-        BanjoeController.$Banjoe.goLeft();
-    }
-    else if(event.key === "d"){
-        BanjoeController.$Banjoe.goRight();
-    }
-    else if(event.key === "w"){
-        BanjoeController.$Banjoe.jump();
-    }
-});
 
 $(document).ready(function () {
     BanjoeController.init();

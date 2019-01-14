@@ -4,12 +4,12 @@ var Banjoe = {
     //Direction will be a boolean, true for right, false for left
     direction : true,
     x_position : 0,
-    y_position : 0,
-    y_velocity : 20,
-    y_max : 60,
-    y_min : 0,
+    y_position : -1825,
+    y_velocity : -40,
+    y_max : -1865,
+    y_min : -1825,
     speed : -10,
-    y_fall : -1,
+    y_fall : 1,
     gifs : ["images/BanjoGuyRunning.gif", "images/BanjoGuyRunningLeft.gif", "images/BanjoGuyJump.gif", "images/BanjoGuyJumpLeft.gif"],
     $images : null,
  
@@ -41,7 +41,7 @@ var Banjoe = {
     },
 
     jump : function(){
-        if(this.y_position < this.y_max){
+        if(this.y_position > this.y_max){
             this.y_position += this.y_velocity;      
         }
         if(this.direction === true){
@@ -53,11 +53,12 @@ var Banjoe = {
     },
 
     run : function(){
-        if(this.y_position > 1){
+        if(this.y_position < this.y_min + 1 /*&& this.y_position != -1*/){
             this.y_position += this.y_fall;
+            this.x_position += this.speed;
         }
-        else if (this.y_position === 1) {
-            this.y_position = 0;
+        else if (this.y_position === this.y_min +1) {
+            this.y_position = this.y_min;
             if(this.direction === true){
                 this.goRight();
             }

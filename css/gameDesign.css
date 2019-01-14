@@ -1,6 +1,7 @@
 .topnav{
     z-index:99;
 }
+body{background-color:black;}
 .containerGame{
     overflow:hidden;
     position:relative;
@@ -44,7 +45,7 @@
     z-index:97;
 }*/
 #Banjoe{
-    background: url("../images/BanjoeGuy.gif") repeat-x;
+    /*background: url("../images/BanjoGuy.gif") repeat-x;*/
     position:relative;
     z-index:5;
     top:-1825px;
