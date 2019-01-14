@@ -146,6 +146,7 @@ body
     top: 1%;
     left: 1%;
     height: 1400;
+    z-index:99;
 }
 
 .line
